@@ -28,44 +28,26 @@
     <!-- Train Schedule Card -->
     <div class="card">
         <div class="card-header">
-            <b>Current Train Schedule</b>
+            <b><i class="far fa-clock"></i> Current Train Schedule</b>
         </div>
         <!-- Train Schedule info goes in here -->
         <div class="card-body" id="train-schedule">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        1 of 5
+            
+                <div class="row" id="column-titles">
+                    <div class="col" id="name">
+                        <b>Train Name</b>
                     </div>
-                    <div class="col">
-                        2 of 5
+                    <div class="col" id="destination">
+                        <b>Destination</b>
                     </div>
-                    <div class="col">
-                        3 of 5
+                    <div class="col" id="frequency">
+                        <b>Frequency (min)</b>
                     </div>
-                    <div class="col">
-                        4 of 5
+                    <div class="col" id="next-arrival">
+                        <b>Next Arrival</b>
                     </div>
-                    <div class="col">
-                        5 of 5
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col">
-                        1 of 5
-                    </div>
-                    <div class="col">
-                        2 of 5
-                    </div>
-                    <div class="col">
-                        3 of 5
-                    </div>
-                    <div class="col">
-                        4 of 5
-                    </div>
-                    <div class="col">
-                        5 of 5
+                    <div class="col" id="minutes-away">
+                        <b>Minutes Away</b>
                     </div>
                 </div>
                 <hr>
@@ -140,7 +122,25 @@
                         5 of 5
                     </div>
                 </div>
-            </div>
+                <hr>
+                <div class="row">
+                    <div class="col">
+                        1 of 5
+                    </div>
+                    <div class="col">
+                        2 of 5
+                    </div>
+                    <div class="col">
+                        3 of 5
+                    </div>
+                    <div class="col">
+                        4 of 5
+                    </div>
+                    <div class="col">
+                        5 of 5
+                    </div>
+                </div>
+            
         </div>
     </div>
     
@@ -149,7 +149,6 @@
     <div class="card bg-light mb-3" id="add-train">
         <div class="card-header"><b>Add Train</b></div>
         <div class="card-body">
-            <h5 class="card-title"></h5>
             <form>
                 <div class="form-group">
                     <label for="formGroupExampleInput"><b>Train Name</b></label>

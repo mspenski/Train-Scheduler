@@ -19,5 +19,9 @@
 .row{
     margin: 0px;
     padding: 0px;
+    width: 100%;
 }
-
+hr{
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
