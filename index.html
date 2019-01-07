@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Train Scheduler</title>
     <!-- Bootstrap link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    
     <!-- Header -->
     <div class="card" id="header">
         <div class="card-body">
@@ -32,118 +33,31 @@
         </div>
         <!-- Train Schedule info goes in here -->
         <div class="card-body" id="train-schedule">
-            
-                <div class="row" id="column-titles">
-                    <div class="col" id="name">
-                        <b>Train Name</b>
-                    </div>
-                    <div class="col" id="destination">
-                        <b>Destination</b>
-                    </div>
-                    <div class="col" id="frequency">
-                        <b>Frequency (min)</b>
-                    </div>
-                    <div class="col" id="next-arrival">
-                        <b>Next Arrival</b>
-                    </div>
-                    <div class="col" id="minutes-away">
-                        <b>Minutes Away</b>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col">
-                        1 of 5
-                    </div>
-                    <div class="col">
-                        2 of 5
-                    </div>
-                    <div class="col">
-                        3 of 5
-                    </div>
-                    <div class="col">
-                        4 of 5
-                    </div>
-                    <div class="col">
-                        5 of 5
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col">
-                        1 of 5
-                    </div>
-                    <div class="col">
-                        2 of 5
-                    </div>
-                    <div class="col">
-                        3 of 5
-                    </div>
-                    <div class="col">
-                        4 of 5
-                    </div>
-                    <div class="col">
-                        5 of 5
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col">
-                        1 of 5
-                    </div>
-                    <div class="col">
-                        2 of 5
-                    </div>
-                    <div class="col">
-                        3 of 5
-                    </div>
-                    <div class="col">
-                        4 of 5
-                    </div>
-                    <div class="col">
-                        5 of 5
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col">
-                        1 of 5
-                    </div>
-                    <div class="col">
-                        2 of 5
-                    </div>
-                    <div class="col">
-                        3 of 5
-                    </div>
-                    <div class="col">
-                        4 of 5
-                    </div>
-                    <div class="col">
-                        5 of 5
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col">
-                        1 of 5
-                    </div>
-                    <div class="col">
-                        2 of 5
-                    </div>
-                    <div class="col">
-                        3 of 5
-                    </div>
-                    <div class="col">
-                        4 of 5
-                    </div>
-                    <div class="col">
-                        5 of 5
-                    </div>
-                </div>
-            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <!-- The scope attribute specifies that this is a header for a column -->
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (min)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <!-- Insert additional movie rows here -->
+                </tbody>
+            </table>
+
         </div>
     </div>
-    
+
 
     <!-- Form for adding trains -->
     <div class="card bg-light mb-3" id="add-train">
@@ -172,7 +86,9 @@
             </form>
         </div>
     </div>
-    
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
