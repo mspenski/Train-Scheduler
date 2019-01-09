@@ -15,10 +15,17 @@
         crossorigin="anonymous">
     <!-- My CSS -->
     <link rel="stylesheet" href="assets/style.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+    <!-- Moment.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
 </head>
 
+
 <body>
-    
     <!-- Header -->
     <div class="card" id="header">
         <div class="card-body">
@@ -29,7 +36,7 @@
     <!-- Train Schedule Card -->
     <div class="card">
         <div class="card-header">
-            <b><i class="far fa-clock"></i> Current Train Schedule</b>
+            <b><i class="far fa-clock"></i> Train Schedule</b>
         </div>
         <!-- Train Schedule info goes in here -->
         <div class="card-body" id="train-schedule">
@@ -42,16 +49,11 @@
                         <th scope="col">Frequency (min)</th>
                         <th scope="col">Next Arrival</th>
                         <th scope="col">Minutes Away</th>
-
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <!-- Insert additional movie rows here -->
+
+                    <!-- Insert additional employee rows here -->
                 </tbody>
             </table>
 
@@ -66,19 +68,19 @@
             <form>
                 <div class="form-group">
                     <label for="formGroupExampleInput"><b>Train Name</b></label>
-                    <input type="text" class="form-control" id="search">
+                    <input type="text" class="form-control" id="name-input">
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput"><b>Destination</b></label>
-                    <input type="text" class="form-control" id="search">
+                    <input type="text" class="form-control" id="destination-input">
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput"><b>First Train Time (HH:mm - military time)</b></label>
-                    <input type="text" class="form-control" id="search">
+                    <input type="text" class="form-control" id="first-input">
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput"><b>Frequency (min)</b></label>
-                    <input type="text" class="form-control" id="search">
+                    <input type="text" class="form-control" id="frequency-input">
                 </div>
 
 
@@ -87,11 +89,8 @@
         </div>
     </div>
 
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous"></script>
+
+    
     <!-- My JS -->
     <script type="text/javascript" src="assets/script.js"></script>
 </body>
