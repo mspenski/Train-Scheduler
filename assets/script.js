@@ -13,7 +13,6 @@ firebase.initializeApp(config);
 var database = firebase.database();
 var TrainName;
 var destination;
-var firstTrainTime;
 var frequency;
 var minutesAway;
 var nextArrival;
@@ -27,12 +26,10 @@ $("#submit").on("click", function (event) {
     destination: $("#destination-input").val().trim(),
     firstTrain: $("#first-input").val().trim(),
     frequency: $("#frequency-input").val().trim(),
-    // dateAdded: firebase.database.ServerValue.TIMESTAMP
   };
 
-
   database.ref().push(newTrain);
-
+  //empties inputs on submit
   $("#name-input").val("")
   $("#destination-input").val("")
   $("#first-input").val("")
@@ -41,30 +38,33 @@ $("#submit").on("click", function (event) {
 
 database.ref().on("child_added", function (childSnapshot) {
   var csv = childSnapshot.val();
-  firstTrain = csv.firstTrainTime;
-  firstTrainTime + csv.frequency
+  firstTrain = csv.firstTrain;
 
-  // console.log(childSnapshot.val().name);
-  // console.log(childSnapshot.val().role);
-  // console.log(childSnapshot.val().firstTrain);
-  // console.log(childSnapshot.val().monthlyRate);
+  var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
 
-  var startDateFormat = "MM/DD/YYYY";
-  var convertedDate = moment(firstTrain, startDateFormat);
-  monthsWorked = Math.abs(convertedDate.diff(moment(), "months"));
+  // Difference between the times
+  var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+ 
+  // Time apart (remainder)
+  var tRemainder = diffTime % csv.frequency;
 
-  var employeeTotalBilled = monthsWorked * childSnapshot.val().monthlyRate
+  // Minutes Until Train
+  var minutesAway = csv.frequency - tRemainder;
+
+  // Next Train
+  var nextArrival = moment().add(minutesAway, "minutes");
 
   var tr = $("<tr>");
 
   var nameTd = $("<td>").text(csv.name);
   var destinationTd = $("<td>").text(csv.destination);
   var frequencyTd = $("<td>").text(csv.frequency);
+  var minutesAwayTd = $("<td>").text(moment(nextArrival).format("hh:mm a"));
+  var nextArrivalTd = $("<td>").text(minutesAway);
 
-
-  // console.log(childSnapshot.val())
-  tr.append(nameTd, destinationTd, frequencyTd);
-
+  // Appends to the table
+  tr.append(nameTd, destinationTd, frequencyTd, minutesAwayTd, nextArrivalTd);
+  
   $("tbody").append(tr);
 }, function (errorObject) {
   console.log("Errors handled: " + errorObject.code);
